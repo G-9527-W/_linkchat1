@@ -1,0 +1,3 @@
+﻿  client.cpp
+C:\Users\8888\Desktop\C语言代码\client\client\client.cpp(48,48): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  client.vcxproj -> C:\Users\8888\Desktop\C语言代码\client\x64\Debug\client.exe
