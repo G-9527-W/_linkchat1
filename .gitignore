@@ -1,6 +1,109 @@
-# Visual Studio 临时文件
-*.suo
-*.db
-*.vsidx
+# ==============================================
+# Visual Studio 通用忽略规则（覆盖 2019/2022 等版本）
+# ==============================================
+
+# 1. 编译产物（可执行文件、目标文件、库文件）
+*.exe
+*.exe.config
+*.exe.manifest
+*.dll
+*.pdb
+*.o
+*.obj
+*.lib
+*.a
+*.exp
+*.ilk
+*.map
+*.sbr
+*.tlb
+*.tlh
+*.bak
+*.cache
+
+# 2. 预编译头文件（就是导致你大文件报错的 .ipch）
 *.ipch
+ipch/
+.vs/*/ipch/  # VS2017+ 版本的 ipch 存储路径
+
+# 3. VS 临时缓存文件夹（包含大量临时文件、编译缓存）
 .vs/
+!.vs/*.sln.docstates  # 保留解决方案的文档状态（可选，不影响核心功能）
+!.vs/*.sln.license  # 保留解决方案的许可证信息（可选）
+!.vs/*.vcxproj.filters  # 保留项目筛选器配置（必要，否则项目结构可能错乱）
+
+# 4. 调试相关文件
+*.suo  # 解决方案用户选项（记录调试配置、窗口布局等，本地用，无需上传）
+*.db  # VS 生成的数据库文件（如 VC.db）
+*.log  # 调试日志
+*.opensdf
+*.sdf
+*.vsp
+*.vspx
+*.psess
+*.tlb
+*.tli
+*.tlh
+*.bin
+*.hex
+
+# 5. 发布/部署相关文件
+bin/
+Bin/
+binaries/
+obj/
+Obj/
+x64/  # 64位编译输出文件夹
+x86/  # 32位编译输出文件夹
+Debug/  # 调试模式输出文件夹
+Release/  # 发布模式输出文件夹
+ReleaseWithDebInfo/  # 带调试信息的发布模式文件夹
+TestResults/  # 测试结果文件夹
+Publish/  # 发布输出文件夹
+dist/  # 打包输出文件夹
+
+# 6. 代码分析/静态检查文件
+*.CodeAnalysisLog.xml
+*.lastcodeanalysissucceeded
+*.annotations.xml
+*.dgml
+*.gld
+*.ndproj
+
+# 7. 其他临时文件
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+.DS_Store  # Mac 系统临时文件
+Thumbs.db  # Windows 缩略图缓存
+*.user  # 项目用户配置文件（记录本地路径、调试设置等）
+*.userosscache
+*.sln.xmldata
+*.vcxproj.user
+*.vcxproj.filters.user
+*.vcxproj.embeddedResource
+*.appx
+*.appxbundle
+*.appxupload
+*.msix
+*.msixbundle
+*.msixupload
+*.cer
+*.pfx
+*.p7b
+*.p7c
+
+# 8. NuGet 相关（如果用了 NuGet 包）
+packages/
+!packages/repositories.config
+*.nupkg
+*.nupkg.metadata
+*.nuspec
+obj/project.assets.json
+obj/project.nuget.cache
+obj/*.csproj.nuget.g.props
+obj/*.csproj.nuget.g.targets
+.nuget/
